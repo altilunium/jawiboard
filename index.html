@@ -1,0 +1,230 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Jawiboard</title>
+
+<style>
+/* arabic */
+@font-face {
+  font-family: 'Scheherazade';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(YA9Ur0yF4ETZN60keViq1kQQtZmptvY.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+/* latin */
+@font-face {
+  font-family: 'Scheherazade';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(YA9Ur0yF4ETZN60keViq1kQQsJmp.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+.bt, .bt:hover, .bt:visited {text-decoration:none; cursor:pointer;  width:33pt; font-size:1.7em; color:#CC0033; font-family:Times New Roman; }
+.btb, .btb:hover, .btb:visited {text-decoration:none; cursor:pointer; width:27pt; font-size:1.7em; color:#CC0033; font-family:Times New Roman; }
+
+.bta, .bta:hover, .bta:visited {text-decoration:none; cursor:pointer; width:38pt; font-size:40px;  font-family:"Scheherazade New",Scheherazade,Lateef,LateefGR,Amiri,"Noto Naskh Arabic","Droid Arabic Naskh",Harmattan,"Arabic Typesetting","Traditional Arabic","Simplified Arabic","Arabic Transparent","Times New Roman",Arial,"Sakkal Majalla","Microsoft Uighur",Calibri,"Microsoft Sans Serif","Segoe UI",serif,sans-serif; }
+.lat { font-family:Arial; font-size:20px; }
+
+
+.cadr {
+  width: 95%;
+    font-size: 42px;
+    font-family: "Scheherazade New",Scheherazade,Lateef,LateefGR,Amiri,"Noto Naskh Arabic","Droid Arabic Naskh",Harmattan,"Arabic Typesetting","Traditional Arabic","Simplified Arabic","Arabic Transparent","Times New Roman",Arial,"Sakkal Majalla","Microsoft Uighur",Calibri,"Microsoft Sans Serif","Segoe UI",serif,sans-serif;
+    direction: rtl;
+    padding: 20px;
+    border: none;
+}
+
+#kopi{
+  margin-top:30px;
+  width: 200px;
+    height: 200px;
+    font-size:40px;
+}
+}
+
+
+
+.tabl tr { text-align:center; }
+.tabl td { padding-left:0.2em; padding-right:0.2em;  white-space: nowrap; }
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="carjaw.js"></script>
+<script src="clipboard.js"></script>
+<script src="savee.js"></script>
+<!-- Google Analytics -->
+
+<!-- End Google Analytics -->
+</head>
+
+<body onLoad="conversion.saisie.focus()">
+<form name="conversion">
+<div class="delc"> 
+<br>
+<input type="button" class="eff" title="clear" onClick="reset();conversion.saisie.focus()" value="">
+</div>
+
+<center>
+<textarea name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
+<br>
+<br>
+
+<br>
+<br>
+</center>
+
+
+
+<table class="tab-kb">
+<tr class="lat">
+<td>zh</td>
+<td>th</td>
+<td>dh</td>
+<td>sh</td>
+<td>sy</td>
+<td>s</td>
+<td>z</td>
+<td>r</td>
+<td>dz</td>
+<td>d</td>
+<td>kh</td>
+<td>H</td>
+<td>c</td>
+<td>j</td>
+<td>ts</td>
+<td>t</td>
+<td>b</td>
+<td>A</td>
+<td>a</td>
+</tr>
+<tr>
+<td><input type="button" class="bta" onclick="alpha('ظ')" value="ظ" title="zo"></td>
+<td><input type="button" class="bta" onclick="alpha('ط')" value="ط" title="to"></td>
+<td><input type="button" class="bta" onclick="alpha('ض')" value="ض" title="dod"></td>
+<td><input type="button" class="bta" onclick="alpha('ص')" value="ص" title="sod"></td>
+<td><input type="button" class="bta" onclick="alpha('ش')" value="ش" title="syin"></td>
+<td><input type="button" class="bta" onclick="alpha('س')" value="س" title="sin"></td>
+<td><input type="button" class="bta" onclick="alpha('ز')" value="ز" title="zai"></td>
+<td><input type="button" class="bta" onclick="alpha('ر')" value="ر" title="ra"></td>
+<td><input type="button" class="bta" onclick="alpha('ذ')" value="ذ" title="zal"></td>
+<td><input type="button" class="bta" onclick="alpha('د')" value="د" title="dal"></td>
+<td><input type="button" class="bta" onclick="alpha('خ')" value="خ" title="kha"></td>
+<td><input type="button" class="bta" onclick="alpha('ح')" value="ح" title="ha"></td>
+<td><input type="button" class="bta" onclick="alpha('چ')" value="چ" title="ca"></td>
+<td><input type="button" class="bta" onclick="alpha('ج')" value="ج" title="jim"></td>
+<td><input type="button" class="bta" onclick="alpha('ث')" value="ث" title="sa"></td>
+<td><input type="button" class="bta" onclick="alpha('ت')" value="ت" title="ta"></td>
+<td><input type="button" class="bta" onclick="alpha('ب')" value="ب" title="ba"></td>
+<td><input type="button" class="bta" onclick="alpha('إ')" value="إ"></td>
+<td><input type="button" class="bta" onclick="alpha('ا')" value="ا" title="alif"></td>
+</tr>
+</table>
+<br>
+<br>
+
+<table class="tab-kb">
+<tr class="lat"> 
+<td>e</td>
+<td>ny</td>
+<td>y</td>
+<td>-</td>
+<td>h.</td>
+<td>h</td>
+<td>v</td>
+<td>w/u</td>
+<td>n</td>
+<td>m</td>
+<td>l</td>
+<td>g</td>
+<td>k</td>
+<td>q</td>
+<td>p</td>
+<td>f</td>
+<td>ng</td>
+<td>gh</td>
+<td>'</td>
+</tr>
+<tr>
+<td><input type="button" class="bta" onclick="alpha('ى')" value="ى" title="ye / alif maqsurah"></td>
+<td><input type="button" class="bta" onclick="alpha('ڽ')" value="ڽ" title="nya"></td>
+<td><input type="button" class="bta" onclick="alpha('ي')" value="ي" title="ya"></td>
+<td><input type="button" class="bta" onclick="alpha('ء')" value="ء" title="hamzah"></td>
+<td><input type="button" class="bta" onclick="alpha('ة')" value="ة" title="ta marbutah"></td>
+<td><input type="button" class="bta" onclick="alpha('ه')" value="ه" title="ha"></td>
+<td><input type="button" class="bta" onclick="alpha('ۏ')" value="ۏ" title="va"></td>
+<td><input type="button" class="bta" onclick="alpha('و')" value="و" title="wau"></td>
+<td><input type="button" class="bta" onclick="alpha('ن')" value="ن" title="nun"></td>
+<td><input type="button" class="bta" onclick="alpha('م')" value="م" title="mim"></td>
+<td><input type="button" class="bta" onclick="alpha('ل')" value="ل" title="lam"></td>
+<td><input type="button" class="bta" onclick="alpha('ݢ')" value="ݢ" title="ga"></td>
+<td><input type="button" class="bta" onclick="alpha('ک')" value="ک" title="kaf"></td>
+<td><input type="button" class="bta" onclick="alpha('ق')" value="ق" title="qaf"></td>
+<td><input type="button" class="bta" onclick="alpha('ڤ')" value="ڤ" title="pa"></td>
+<td><input type="button" class="bta" onclick="alpha('ف')" value="ف" title="fa"></td>
+<td><input type="button" class="bta" onclick="alpha('ڠ')" value="ڠ" title="nga"></td>
+<td><input type="button" class="bta" onclick="alpha('غ')" value="غ" title="ghain"></td>
+<td><input type="button" class="bta" onclick="alpha('ع')" value="ع" title="ain"></td>
+</tr>
+</table>
+
+
+<table class="tab-kb">
+<tr class="lat"> 
+<td>--</td>
+</tr>
+<tr>
+<td><input type="button" class="bta" onclick="alpha('ئ')" value="ئ" title="ye / alif maqsurah"></td>
+</tr>
+</table>
+
+<center>
+  <input type="button"  id="kopi" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
+
+</center>
+<script>
+var clipboard = new Clipboard('.bf');
+clipboard.on('success', function(e) {
+console.log(e); 
+});
+clipboard.on('error', function(e) {
+console.log(e);
+});
+</script>
+
+
+
+
+
+<div style="display: none">
+<input type="button" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
+<script>
+var clipboard = new Clipboard('.bf');
+clipboard.on('success', function(e) {
+console.log(e); 
+});
+clipboard.on('error', function(e) {
+console.log(e);
+});
+</script>
+<input type="button" class="bf" onClick="save()" value="save">
+<input type="button" class="bf" onClick="alpha(' ')" value="space">
+
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+</form>
+</div>
+</body>
+</html>
