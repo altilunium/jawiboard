@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <title>Jawiboard</title>
 
@@ -43,13 +44,46 @@
 }
 
 #kopi{
-  margin-top:30px;
-  width: 200px;
-    height: 200px;
-    font-size:40px;
-}
+     position: fixed;
+    bottom: 0px;
+    left: -27px;
+    width: 100%;
+     height: 60px; 
+    background-color: lime;
+    font-size:30px;
 }
 
+
+
+.halp {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+.halp div{
+  margin: 0 10px;
+  margin-top:33px;
+}
+
+
+#bar {
+      width: 95%;
+    border: 0px;
+    padding-left: 3%;
+    overflow: hidden;
+    resize: none;
+
+    font-weight: 400;
+
+}
+
+#bar:focus {
+    outline: none;
+}
 
 
 .tabl tr { text-align:center; }
@@ -65,6 +99,8 @@
 </head>
 
 <body onLoad="conversion.saisie.focus()">
+
+
 <form name="conversion">
 <div class="delc"> 
 <br>
@@ -72,16 +108,69 @@
 </div>
 
 <center>
-<textarea name="saisie" id="bar" onKeyUp="transcrire()" rows="4" class="cadr"></textarea>
-<br>
-<br>
+<textarea name="saisie" id="bar" onKeyUp="transcrire()" rows="1" class="cadr"></textarea>
 
-<br>
-<br>
+<script>
+  function calcHeight(value) {
+  let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+  // min-height + lines x line-height + padding + border
+  let newHeight = 80 + numberOfLineBreaks * 80 + 12 + 2;
+  return newHeight;
+}
+var textarea = document.getElementById("bar");
+textarea.addEventListener("keyup", () => {
+  textarea.style.height = calcHeight(textarea.value) + "px";
+});
+</script>
 </center>
 
 
 
+<div class="halp" >
+<div>a<br>ا</div>
+<div>A<br>أ</div>
+<div>A.<br>إ</div>
+<div>b<br>ب</div>
+<div>t<br>ت</div>
+<div>ts<br>ث</div>
+<div>j<br>ج</div>
+<div>c<br>چ</div>
+<div>H<br>ح</div>
+<div>kh<br>خ</div>
+<div>d<br>د</div>
+<div>dz<br>ذ</div>
+<div>r<br>ر</div>
+<div>z<br>ز</div>
+<div>s<br>س</div>
+<div>sy<br>ش</div>
+<div>sh<br>ص</div>
+<div>dh<br>ض</div>
+<div>th<br>ط</div>
+<div>zh<br>ظ</div>
+<div>'<br>ع</div>
+<div>gh<br>غ</div>
+<div>ng<br>ڠ</div>
+<div>f<br>ف</div>
+<div>p<br>ڤ</div>
+<div>q<br>ق</div>
+<div>k<br>ک</div>
+<div>g<br>ݢ</div>
+<div>l<br>ل</div>
+<div>m<br>م</div>
+<div>n<br>ن</div>
+<div>w/u<br>و</div>
+<div>v<br>ۏ</div>
+<div>h<br>ه</div>
+<div>h.<br>ة</div>
+<div>-<br>ء</div>
+<div>y/i<br>ي</div>
+<div>ny<br>ڽ</div>
+<div>e<br>ى</div>
+<div>--<br>ئ</div>
+</div>
+
+
+<div style="display: none">
 <table class="tab-kb">
 <tr class="lat">
 <td>zh</td>
@@ -173,21 +262,15 @@
 <td><input type="button" class="bta" onclick="alpha('ع')" value="ع" title="ain"></td>
 </tr>
 </table>
+</div>
 
 
-<table class="tab-kb">
-<tr class="lat"> 
-<td>--</td>
-</tr>
-<tr>
-<td><input type="button" class="bta" onclick="alpha('ئ')" value="ئ" title="ye / alif maqsurah"></td>
-</tr>
-</table>
 
-<center>
-  <input type="button"  id="kopi" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
 
-</center>
+
+<input type="button"  id="kopi" class="bf" data-clipboard-action="copy" data-clipboard-target="#bar" value="copy">
+
+
 <script>
 var clipboard = new Clipboard('.bf');
 clipboard.on('success', function(e) {
@@ -207,7 +290,8 @@ console.log(e);
 <script>
 var clipboard = new Clipboard('.bf');
 clipboard.on('success', function(e) {
-console.log(e); 
+console.log(e);
+alert("Copied to clipboard!") 
 });
 clipboard.on('error', function(e) {
 console.log(e);
