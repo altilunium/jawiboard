@@ -85,7 +85,7 @@ a.npa:hover { color: #DD0000; text-decoration: none; border-bottom: 0; }
 .eff { background: url("../images/effacer.png") center right no-repeat; padding-right: 20px; cursor: pointer; width: 24px; height: 16px; border-width: 0 0 0 0; }
 .bo { color: #0000D7; background-color: #DFDFFF; cursor: pointer; font-size: 9pt; font-family: Arial; border: 1px #AEAEFF; }
 .bo:hover { color: #DD0000; background-color: #EAEAFF; font-size: 9pt; font-family: Arial; border: 1px #AEAEFF; }
-textarea { font-family: Arial; color: #5B5B5B; font-size:12pt; }
+textarea { font-family: Arial; color: black; font-size:12pt; }
 input { font-family: Arial; color: #5B5B5B; font-size:12pt; }
 select { color: #330066; }
 .lb { color: #0000DD; font-family: Arial; font-size: 90%; background-color: #E8E8FF; cursor: pointer; line-height:1.7em; margin-right:0.2em;  padding: 0.1em 0.4em 0.1em 0.4em; border-bottom: 1px solid #330066; border-right: 1px solid #330066; }
