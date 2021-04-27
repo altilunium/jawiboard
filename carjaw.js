@@ -125,6 +125,16 @@ car = car.replace(/غ\./g,"ݢه");
 car = car.replace(/ڠ\./g,"نݢ");
 car = car.replace(/ڽ\./g,"ني");
 
+car = car.replace(/1/g,'\u064e')
+car = car.replace(/\u064e\./g,'\u064b')
+car = car.replace(/\u064b\./g,'\u0653')
+car = car.replace(/2/g,'\u0650')
+car = car.replace(/\u0650\./g,'\u064d')
+car = car.replace(/3/g,'\u064f')
+car = car.replace(/\u064f\./g,'\u064c')
+car = car.replace(/\u064c\./g,'\u0657')
+car = car.replace(/4/g,'\u0652')
+car = car.replace(/\u0652\./g,'\u0651')
 
 
 startPos = document.conversion.saisie.selectionStart;
