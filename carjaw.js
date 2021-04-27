@@ -97,6 +97,8 @@ car = car.replace(/v/g, "ۏ");
 car = car.replace(/[yiîī]/g, "ي");
 car = car.replace(/e/g, "ى");
 car = car.replace(/ء-/g, "ئ");
+car = car.replace(/ئ-/g, "ؤ");
+
 car = car.replace(/-/g, "ء");
 
 car = car.replace(/ʾ/g, "ء");
