@@ -129,7 +129,8 @@ car = car.replace(/ڽ\./g,"ني");
 
 car = car.replace(/1/g,'\u064e')
 car = car.replace(/\u064e\./g,'\u064b')
-car = car.replace(/\u064b\./g,'\u0653')
+car = car.replace(/\u064b\./g,'\u0670')
+car = car.replace(/\u0670\./g,'\u0653')
 car = car.replace(/2/g,'\u0650')
 car = car.replace(/\u0650\./g,'\u064d')
 car = car.replace(/3/g,'\u064f')
